@@ -114,7 +114,7 @@ gulp.task('fonts', function() {
 
 //jade
 gulp.task('templates', function() {
-	var jadeJson = JSON.parse( fs.readFileSync(dirs.source.jadeJson, { encoding: 'utf8' }));
+	var jadeJson = JSON.parse(fs.readFileSync(dirs.source.jadeJson, { encoding: 'utf8' }));
 
 	gulp.src(dirs.source.jade)
 	.pipe(plumber())
