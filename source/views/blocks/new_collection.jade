@@ -1,0 +1,11 @@
+section#new_collection.new-collection
+	h2.new-collection_header
+		each val, index in new_collection.header
+			span=val
+	.new-collection_image
+		img(src="img/collection-image.jpg", alt="")
+	.new-collection_text
+		h3.new-collection_text-header=new_collection.text.header
+		each val, index in new_collection.text.text
+			p=val
+		.new-collection_text-button=new_collection.text.button

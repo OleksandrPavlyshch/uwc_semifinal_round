@@ -1,0 +1,13 @@
+section#must_have.must-have
+	h2.must-have_header
+		each val, index in must_have.header
+			if val !== " "
+				span=val
+			else
+				span.hide=val
+	.must-have_half.must-have_first-half
+	.must-have_half.must-have_second-half
+		.must-have_second-half-slogan
+			h3=must_have.slogan.header
+			each val, index in must_have.slogan.text
+				p=val

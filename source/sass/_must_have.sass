@@ -1,0 +1,56 @@
+.must-have
+	overflow: hidden
+	font-size: 0
+	// background-color: $white-smoke
+	white-space: nowrap
+	&_header
+		@extend %block-side-header
+		@extend %block-right-side-header
+		position: relative
+		z-index: 3
+		margin-right: 3.4%
+		margin-left: -7.5%
+		margin-top: .5%
+		margin-bottom: 1.5%
+		color: $solitude
+	&_half
+		width: 50%
+		padding-top: 39.5%
+		display: inline-block
+		vertical-align: top
+		+max-screen($tablet)
+			width: 100%
+			display: block
+			padding-top: 79%
+	&_first-half
+		@extend %is-paralax-bg
+		background: url(../img/must-have-bg-1.jpg) 50% 50% no-repeat
+		background-size: cover
+	&_second-half
+		@extend %is-paralax-bg
+		background: url(../img/must-have-bg-2.jpg) 50% 50% no-repeat
+		background-size: cover
+		position: relative
+		&-slogan
+			position: absolute
+			white-space: normal
+			z-index: 2
+			bottom: 8%
+			left: 33%
+			right: 25%
+			h3
+				@extend %farry
+				font-size: 36px
+				text-transform: uppercase
+				color: $bali-hai
+				margin-bottom: 6%
+				font-weight: normal
+				letter-spacing: 2px
+				font-size: 3vw
+				+max-screen($tablet)
+					font-size: 3vw*2
+			p
+				word-spacing: 4px
+				font-size: 1.1vw
+				+max-screen($tablet)
+					font-size: 1.1vw*2

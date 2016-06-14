@@ -1,0 +1,19 @@
+section#sale.sale
+	.sale_bg
+	h2.sale_header
+		each val, index in sale.header
+			span=val
+	each val, index in sale.sale_items
+		.sale_item
+			a(href="#").sale_item-image
+				img(src="img/" + val.image , alt=val.product_name)
+				.sale_item-price=val.price
+			.sale_item-text-wrap
+				.sale_item-text
+					h3.sale_item-name=val.product_name
+					p.sale_item-description
+						each text, index in val.product_description
+							if index !==0
+								br
+							| #{text}
+				a(href="#").sale_item-more=sale.more

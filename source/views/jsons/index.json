@@ -1,0 +1,110 @@
+{
+	"title": "uwc_semifinal_round",
+	"menu": [
+		"basics",
+		"blouses & shirts",
+		"T-shorts & tops",
+		"jacket",
+		"Trousers & jeans",
+		"dresses",
+		"sweatshirts",
+		"coats & parkas"
+	],
+	"header":{
+		"title": "philosophy",
+		"text": "New season fashion is here so we bet you’ve been busy browsing your favourite mags and blogs for style inspiration. Our new and improved yourself confidence. In The Press category, powered by Endource.",
+		"arrow": "new collection"
+	},
+	"new_collection": {
+		"header": "collection",
+		"text": {
+			"header": "tender girls",
+			"text": [
+				"Saturday nights to Monday morning vibes we all need those go to clothes that keep us looking fresh in any situation.",
+				"Our TENDER GIRLS collection for women understands this and has got you to season."
+			],
+			"button": "new collection"
+		}
+	},
+	"must_have": {
+		"header": "must have",
+		"slogan": {
+			"header": "be jeans",
+			"text": [
+				"You can’t imagine your life without favourite pair of jeans.",
+				"Get a new one. Be cool. Be jeans."
+			]
+		}
+	},
+	"most_wanted": {
+		"header": "most wanted",
+		"items": [
+			{
+				"name": "zebrabaggy",
+				"image_normal": "most-wanted-image-1.png",
+				"image_hover": "most-wanted-image-hover-1.png"
+			},
+			{
+				"name": "fontshirt",
+				"image_normal": "most-wanted-image-2.png",
+				"image_hover": "most-wanted-image-hover-2.png"
+			},
+			{
+				"name": "peachjacket",
+				"image_normal": "most-wanted-image-3.png",
+				"image_hover": "most-wanted-image-hover-3.png"
+			},
+			{
+				"name": "ripjeans",
+				"image_normal": "most-wanted-image-4.png",
+				"image_hover": "most-wanted-image-hover-4.png"
+			}
+		]
+	},
+	"sale":{
+		"header": "sale",
+		"more": "more",
+		"sale_items": [
+			{
+				"price": "$680.00",
+				"product_name": "beach teen sunglases",
+				"product_description": [
+					"Collection featuring materials",
+					"Metal & Polycarbonate Frames"
+				],
+				"image": "sale-pic1.jpg"
+			},
+			{
+				"price": "$890.00",
+				"product_name": "Luxberry sunglases",
+				"product_description": [
+						"Distortion Free 100% UVA/UVB",
+						"Safe Lenses"
+				],
+				"image": "sale-pic2.jpg"
+			}
+		]
+	},
+	"news": {
+		"1": {
+			"header": "woolenart",
+			"anounse": "The muffler is a flexible piece of garment which can be wrapped around your neck.",
+			"image": "news-image1.jpg"
+		},
+		"2": {
+			"header": "sweetfash",
+			"anounse": "Sweets is the best things in every situation of our life.",
+			"image": "news-image2.jpg"
+		},
+		"3": {
+			"header": "jewelaura",
+			"anounse": "Laura mitchel make new jewellery collection only for soft and young  girls.",
+			"image": "news-image3.jpg"
+		}
+	},
+		"footer": {
+		"follow": "follow us",
+		"hashTag": "philosophy",
+		"socialLinks": ["lkdn", "pinterest-p", "fbk", "twt"]
+	}
+}

@@ -1,0 +1,170 @@
+.menu
+	position: fixed
+	left: 0
+	top: 0
+	z-index: 500
+	&_overlay
+		background-color: transparent
+		transition: background .3s ease .2s, opacity .3s ease .2s
+		@media all and (-ms-high-contrast:none)
+			background-color: $white
+			opacity: .5
+	.menu-show &_overlay
+		position: fixed
+		z-index: 400
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+	&_button
+		position: absolute
+		left: 0
+		top: 0
+		width: 62px
+		height: 48px
+		background: transparent
+		border: 1px solid $pink-lady
+		display: inline-block
+		cursor: pointer
+		z-index: 100
+		border-right: none
+		transition: all .4s ease
+		&:before,
+		&:after
+			content: ""
+			transition: all .4s ease
+			position: absolute
+			height: 100%
+			border-right: 1px solid $pink-lady
+			right: 0
+		&:before
+			top: 0
+		&:after
+			bottom: 0
+		.menu-show &:before,
+		.menu-show &:after
+			height: 10px
+			border-color: $concord
+		.is-scroll &,
+		.menu-show &
+			transition: all .4s ease
+			background-color: $white
+		.menu-show &
+			border-color: $concord
+			background: transparent
+		&:hover &-i
+			&:before
+				margin-top: -9px
+			&:after
+				margin-top: 9px
+		.menu-show &:hover &-i
+			&:before,
+			&:after
+				margin: 0
+		&-i
+			position: absolute
+			width: 40px
+			left: 50%
+			margin-left: -20px
+			height: 2px
+			margin-top: -1px
+			background-color: $grey
+			transition: all .3s ease
+			&:before,
+			&:after
+				content: ""
+				position: absolute
+				height: 2px
+				left: 0
+				top: 0
+				background-color: $grey
+				width: 100%
+				transition: all .3s ease
+			&:before
+				margin-top: -11px
+			&:after
+				margin-top: 11px
+			.menu-show &
+				left: 7px
+				width: 27px
+				transform: rotate(90deg)
+				height: 1px
+				margin: 0
+				background-color: $concord
+				&:before,
+				&:after
+					margin: 0
+					width: 27px
+					height: 1px
+					background-color: $concord
+				&:before
+					transform: rotate(59deg)
+					transform-origin: 100% 100%
+				&:after
+					transform-origin: 0 0
+					transform: rotate(-59deg)
+	&_nav
+		position: absolute
+		left: 29px
+		top: 47px
+		z-index: 500
+		transition: all .4s ease
+		min-width: 28vw
+		// overflow: hidden
+		+max-screen($tablet)
+			top: 20px
+		&:before
+			right: auto
+		a
+			font-size: 0
+			transition: all .4s ease
+			text-transform: uppercase
+			font-weight: 200
+			display: block
+			padding: 0 20px
+			white-space: nowrap
+			text-decoration: none
+			line-height: 2.23
+			color: $grey
+			&:hover
+				color: $white
+				font-weight: normal
+				background: url(../img/base-menu-hover.jpg) 50% 50% no-repeat
+				background-size: cover
+		.menu-show & a
+			font-size: 30px
+			font-size: 1.9vw
+			+max-screen($tablet)
+				font-size: 1.9vw*2
+			+max-screen($mobile)
+				font-size: 1.9vw*2.7
+
+		.is-scroll &,
+		.menu-show &
+			top: 20px
+			+max-screen($tablet)
+				top: 10px
+		.menu-show &
+			background-color: $pink-lady
+			padding: 75px 56px 75px 40px
+			&:before
+				transition: all .4s ease .4s
+				content: ""
+				position: absolute
+				left: 56px
+				// width: 0
+				background-color: $concord
+				height: 1px
+				top: 25px
+				right: 0
+			// &:before
+
+
+
+
+
+
+body > *
+	transition: filter 1s ease
+body.menu-show > *:not(.menu)
+	filter: blur(10px)

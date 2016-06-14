@@ -1,0 +1,105 @@
+header
+	height: 100%
+	// background: url(../img/top-background.jpg) 50% 50% no-repeat
+	background-size: cover
+	position: relative
+	// padding-top: 68%
+	padding-top: 50%
+	overflow: hidden
+
+.header-bg
+	@extend %is-paralax-bg
+	background-size: cover
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: url(../img/top-background.jpg) 50% 50% no-repeat
+	background-size: cover
+
+.header-content
+	display: table
+	z-index: 2
+	position: absolute
+	left: 9.2%
+	// top: 35.8%
+	top: 30.8%
+	width: 55.5%
+	height: 55.7%
+	border: 2px solid $grey
+	border-bottom: none
+	+portrait-max-screen($tablet)
+		width: 77.5%
+	&:before,
+	&:after
+		content: "";
+		position: absolute
+		bottom: 0
+		border-top: 2px solid $grey
+	&:before
+		left: 0
+		right: 95%
+	&:after
+		right: 0
+		left: 18%
+	&_text
+		display: table-cell
+		vertical-align: middle
+		color: $mortar
+		text-align: left
+		width: 84%
+		padding-bottom: 5%
+		h1
+			@extend %farry
+			letter-spacing: 2px
+			line-height: 1.6
+			font-size: 72px
+			font-size: 6vw
+			text-transform: uppercase
+			a
+				text-decoration: none
+				font: inherit
+				color: inherit
+			+portrait-max-screen($tablet)
+				font-size: 8.2vw
+		p
+			// font-size: 1.1vw
+			line-height: 1.77
+			padding-right: 15%
+			+portrait-max-screen($tablet)
+				padding-right: 0
+				font-size: 1.9vw
+			+portrait-max-screen($mobile)
+				font-size: 2.5vw
+	&_down-arrow
+		+hidetext
+		position: absolute
+		top: 100%
+		left: 11.5%
+		margin-left: -18px
+		margin-top: 3.9%
+		+arr(36, 24, $grey, b)
+		animation: 3.4s ease-in infinite fadebottom
+		+max-screen($tablet)
+			+arr(27, 18, $grey, b)
+			margin-left: -13px
+			margin-top: 1.9%
+
+
+@keyframes fadebottom
+	0%
+		opacity: 1
+		transform: translateY(0px)
+	25%
+		opacity: 0
+		transform: translateY(30px)
+	30%
+		opacity: 0
+		transform: translateY(0px)
+	45%
+		opacity: 1
+		transform: translateY(0px)
+	100%
+		opacity: 1
+		transform: translateY(0px)

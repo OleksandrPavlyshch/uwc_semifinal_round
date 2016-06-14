@@ -1,0 +1,129 @@
+.sale
+	// background: url(../img/sale-background.jpg) 50% 50% no-repeat
+	+justify
+	background-size: cover
+	padding: 36px $side-block-padding 38px
+	background-color: $white-smoke
+	overflow: hidden
+	position: relative
+	&_bg
+		@extend %is-paralax-bg
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		background: url(../img/sale-background.jpg) 50% 50% no-repeat
+		background-size: cover
+	&_header
+		@extend %block-side-header
+		@extend %block-right-side-header
+		margin-top: 1.6%
+		color: $lavender-blush
+		+max-screen($tablet)
+			margin-right: -8%
+			width: 6.8%
+	&_item
+		display: inline-block
+		width: 46%
+		padding: 2.5% 0
+		vertical-align: top
+		position: relative
+		&:before
+			content: ""
+			position: absolute
+			left: $sale-item-text-offset
+			right: $sale-item-text-offset
+			top: 0
+			bottom: 0
+			border: 2px solid $oslo-gray
+			z-index: 0
+		+max-screen($tablet)
+			width: 100%
+			padding: 2.5%*2 0
+			& + &
+				margin-top: 7%
+		&-image
+			display: block
+			position: relative
+			overflow: hidden
+			z-index: 1
+			max-height: 30%
+			img
+				max-width: 100%
+		&-price
+			position: absolute
+			z-index: 1
+			right: $sale-item-text-offset
+			bottom: 15%
+			font-size: 48px
+			font-size: 4vw
+			text-transform: uppercase
+			color: $white
+			+max-screen($tablet)
+				font-size: 4vw*2
+			+max-screen($mobile)
+				font-size: 4vw*2.5
+		&-text-wrap
+			margin: 0 $sale-item-text-offset
+			padding: 8.7% 5% 3.2%
+			line-height: 1
+			z-index: 1
+			min-height: 75px
+			min-height: 10.6vw
+			overflow: hidden
+			position: relative
+		&-text
+			transition: transform .3s ease-in .2s
+			transform: scale(1)
+			+max-screen($tablet)
+				margin-bottom: 7%
+		&-text-wrap:hover &-text,
+		&-image:hover + &-text-wrap &-text
+			transform: scale(0)
+			transition: transform .3s ease-in
+			+max-screen($tablet)
+				transform: none
+		&-name
+			text-transform: uppercase
+			+text-overflow
+			color: $coffee-bean
+			font-weight: 200
+			font-size: 22px
+			font-size: 1.8vw
+			margin-bottom: 5%
+			+max-screen($tablet)
+				font-size: 1.8vw*2
+			+max-screen($tablet)
+				font-size: 1.8vw*2.4
+		&-description
+			color: $coffee-bean
+			// font-size: 1.14vw
+			+max-screen($tablet)
+				font-size: 1.14vw*2
+			+max-screen($mobile)
+				font-size: 1.14vw*2.9
+		&-more
+			@extend %default-button
+			position: absolute
+			top: 50%
+			right: 0
+			left: 0
+			margin: -2.3vw auto 0
+			width: 75%
+			opacity: 0
+			// transition: all .3s ease-in
+			transform: scale(1.5)
+			+max-screen($tablet)
+				position: relative
+				margin: 0 auto
+				opacity: 1
+				transform: scale(1)
+				display: block
+			// &:hover
+			// 	transition: all .2s ease-in
+		&-text-wrap:hover &-more,
+		&-image:hover  + &-text-wrap &-more
+			opacity: 1
+			transition: all .3s ease-in .2s
+			transform: scale(1)

@@ -1,0 +1,17 @@
+section#most_wanted.most-wanted
+	h2.most-wanted_header
+		each val, index in most_wanted.header
+			if val !== " "
+				span=val
+			else
+				span.hide=val
+
+	each val, index in most_wanted.items
+		.most-wanted_item
+			.most-wanted_item-i
+				a(href="#").most-wanted_item-image
+					svg.most-wanted_item-image-frame(class="frame-type"+(index+1) width="100%" height="100%" viewBox="0 0 222 357")
+						rect(x="1" y="1" width="220" height="353" "/")/
+					img.most-wanted_item-image-normal(src="img/"+val.image_normal, alt=val.name)
+					img.most-wanted_item-image-hover(src="img/"+val.image_hover, alt=val.name)
+				a(href="#").most-wanted_item-button=val.name

@@ -1,0 +1,130 @@
+.most-wanted
+	+justify
+	padding: 52px $side-block-padding+.4
+	overflow: hidden
+	background-color: $white-smoke
+	+max-screen($mobile)
+		text-align: center
+	&_header
+		@extend %block-side-header
+		@extend %block-left-side-header
+		color: $silver
+		margin-top: 3.5%
+		margin-left: -7.1%
+	&_item + &_item
+		+max-screen($mobile)
+			margin-top: 15%
+			margin-bottom: 0
+	&_item
+		position: relative
+		display: inline-block
+		vertical-align: top
+		width: 22.9%
+		padding-top: 44.18%
+		+max-screen($tablet)
+			width: 22.9%*2
+			padding-top: 44.18%*2
+			margin-bottom: 5%
+		+max-screen($mobile)
+			width: 100%
+			padding-top: 44.18/22.9*90%
+		&-i
+			position: absolute
+			width: 100%
+			height: 100%
+			left: 0
+			top: 0
+		&-image
+			position: absolute
+			padding: 2px
+			left: 0
+			overflow: hidden
+			width: 100%
+			top: 0
+			height: 83.4%
+			text-align: center
+			&-frame
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				z-index: 3
+				fill: none
+				stroke: $bali-hai
+				stroke-width: 2px
+				stroke-dasharray: 599 168 2000
+				transition: all .5s ease, transform .6s ease, top .3s ease
+				rect
+					transition: height .5s ease, transform .6s ease
+				&.frame-type1
+					stroke-dashoffset: 316
+					stroke-dasharray: 604 100 2000
+				&.frame-type2
+					top: 35.4%
+					stroke-dashoffset: 584
+					stroke-dasharray: 604 175 2000
+					@media all and (-ms-high-contrast:none)
+						transform: scaleY(0.64)
+						top: 17.7%
+					rect
+						transform: scaleY(0.64)
+				&.frame-type3
+					stroke-dashoffset: 316
+					stroke-dasharray: 605 177 2000
+				&.frame-type4
+					@media all and (-ms-high-contrast:none)
+						transform: scaleY(0.64)
+						top: -18%
+					rect
+						transform: scaleY(0.64)
+			img
+				position: absolute
+				left: 0
+				top: 0
+				bottom: 0
+				right: 0
+				margin: auto
+				max-width: 100%
+				max-height: 100%
+			&-normal
+				z-index: 2
+				transition: transform .5s ease-in .5s
+				transform: scale(1)
+			&-hover
+				z-index: 1
+				opacity: 0
+				transform: scale(1.5)
+				transition: transform .4s ease-in
+		&:hover &-image-normal
+			transform: scale(0)
+			transition: transform .5s ease-in
+		&:hover &-image-hover
+			opacity: 1
+			transition: all .4s ease-in .5s
+			transform: scale(1)
+		&-button
+			@extend %default-button
+			position: absolute
+			bottom: 0
+			border: none
+			right: 2px
+			left: 2px
+			transition: all .4s ease
+			line-height: 4vw
+			height: 4vw
+			letter-spacing: 3px
+			+max-screen($tablet)
+				background-color: $pink-lady
+				color: $white
+		&:hover &-button
+			background-color: $pink-lady
+			color: $white
+		&:hover &-image-frame
+			top: 0
+			stroke-dashoffset: 0
+			stroke-dasharray: 600 168 2000
+			transform: scaleY(1)
+			rect
+				height: 353px
+				transform: scaleY(1)

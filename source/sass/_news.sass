@@ -1,0 +1,94 @@
+.news
+	+justify
+	padding: 49px 20px 23px
+	overflow: hidden
+	position: relative
+	&_item
+		display: inline-block
+		vertical-align: top
+		position: relative
+		overflow: hidden
+		width: 32.1%
+		padding-top: 24.2%
+		+max-screen($tablet)
+			width: 100%
+			padding-top: 77.2%
+		&-inner
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+		&-content-border
+			fill: none
+			stroke-width: 2px
+			stroke: $seashell
+			transition: stroke-dashoffset ease $defaut-animation-time
+			stroke-dasharray: 310% 310% 310%
+			stroke-dashoffset: 310%
+			+max-screen($mobile)
+				stroke-width: 3px
+		&:hover &-content-border
+			stroke-dashoffset: 0%
+		&-content-arrow
+			stroke: $seashell
+			stroke-width: 2px
+			fill: none
+			transform: translateX(-100%)
+			transition: opacity ease-out $defaut-animation-time, transform ease-out $defaut-animation-time
+			opacity: 0
+		&:hover &-content-arrow
+			opacity: 1
+			transform: translateX(0)
+		&-text
+			position: absolute
+			z-index: 5
+			left: 0
+			top: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			width: 72%
+			height: 88%
+			padding: 6% 2% 5% 9%
+			text-align: left
+			line-height: 1.5
+			transform: scale(0)
+			opacity: 0
+			transition: opacity ease-in $defaut-animation-time, transform ease-in $defaut-animation-time
+		&:hover &-text
+			transform: scale(1)
+			opacity: 1
+		&-header
+			@extend %farry
+			+text-overflow
+			display: block
+			text-transform: uppercase
+			color: $white
+			line-height: 1
+			margin-bottom: 5%
+			letter-spacing: 2px
+			font-size: 30px
+			font-size: 2.5vw
+			+max-screen($tablet)
+				font-size: 2.5vw*3
+			+max-screen($mobile)
+				font-size: 2.5vw*2.8
+		&-anounse
+			@extend p
+			font-family: "Open Sans"
+			display: block
+			color: $nero
+			word-spacing: 3px
+			padding-right: 9%
+			font-weight: normal
+			+max-screen($tablet)
+				font-size: 1.2vw*3
+			+max-screen($mobile)
+				font-size: 1.2vw*3.5
+	svg
+		width: 100%
+		height: 100%
+		feImage
+			x: 50%
+			y: 50%
