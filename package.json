@@ -1,5 +1,5 @@
 {
-  "name": "uwc_semifinal_round",
+  "name": "it-challenge_warmup_round",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -24,11 +24,15 @@
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^6.0.1",
     "gulp-sass": "^2.1.1",
+    "gulp-sass-glob": "^1.0.6",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-spritesmith": "0.0.2",
     "gulp-uglify": "^1.5.3",
     "gulp.spritesmith": "^6.0.1",
     "imagemin-pngquant": "^4.2.0",
     "main-bower-files": "^2.11.1"
+  },
+  "dependencies": {
+    "gulp-concat": "^2.6.0"
   }
 }
