@@ -1,30 +1,54 @@
 'use strict';
 (function () {
-	var $body = $('body'),
-		$htmlBody = $('html, body'),
-		$scrollLinks = $('.scroll-to'),
-		$newsItems = $('.news_item'),
-		feImage = 'feImage',
-		$preloader = $('.preloader'),
-		$menuButton = $('.menu_button'),
-		menuShowClass = 'menu-show',
-		menuClass = '.menu_nav, .menu_button',
-		scrollClass = 'is-scroll',
-		newCollectionHeader = document.querySelector('.new-collection_header'),
-		newCollectionBlock = document.querySelector('#new_collection'),
-		headerBgBlock = document.querySelector('.header-bg'),
-		headerBlock = document.querySelector("header"),
-		mustHaveBlock = document.querySelector('#must_have'),
-		mustHaveHeader = document.querySelector('.must-have_header'),
-		mustHaveFirstHalfBlock = document.querySelector('.must-have_first-half'),
-		mustHaveSecondHalfBlock = document.querySelector('.must-have_second-half'),
-		mostWantedHeader = document.querySelector('.most-wanted_header'),
-		mostWantedBlock = document.querySelector('#most_wanted'),
-		saleHeader = document.querySelector('.sale_header'),
-		saleBlock = document.querySelector('#sale'),
-		saleBgBlock = document.querySelector('.sale_bg');
+	// var $body = $('body'),
+	// 	$htmlBody = $('html, body'),
+	// 	$scrollLinks = $('.scroll-to'),
+	// 	$newsItems = $('.news_item'),
+	// 	feImage = 'feImage',
+	// 	$preloader = $('.preloader'),
+	// 	$menuButton = $('.menu_button'),
+	// 	menuShowClass = 'menu-show',
+	// 	menuClass = '.menu_nav, .menu_button',
+	// 	scrollClass = 'is-scroll',
+	// 	newCollectionHeader = document.querySelector('.new-collection_header'),
+	// 	newCollectionBlock = document.querySelector('#new_collection'),
+	// 	headerBgBlock = document.querySelector('.header-bg'),
+	// 	headerBlock = document.querySelector("header"),
+	// 	mustHaveBlock = document.querySelector('#must_have'),
+	// 	mustHaveHeader = document.querySelector('.must-have_header'),
+	// 	mustHaveFirstHalfBlock = document.querySelector('.must-have_first-half'),
+	// 	mustHaveSecondHalfBlock = document.querySelector('.must-have_second-half'),
+	// 	mostWantedHeader = document.querySelector('.most-wanted_header'),
+	// 	mostWantedBlock = document.querySelector('#most_wanted'),
+	// 	saleHeader = document.querySelector('.sale_header'),
+	// 	saleBlock = document.querySelector('#sale'),
+	// 	saleBgBlock = document.querySelector('.sale_bg');
 
-	var onDomReady = function function_name () {
+	var onDomReady = function () {
+		var $body = $('body'),
+			$htmlBody = $('html, body'),
+			$scrollLinks = $('.scroll-to'),
+			$newsItems = $('.news_item'),
+			feImage = 'feImage',
+			$preloader = $('.preloader'),
+			$menuButton = $('.menu_button'),
+			menuShowClass = 'menu-show',
+			menuClass = '.menu_nav, .menu_button',
+			scrollClass = 'is-scroll',
+			newCollectionHeader = document.querySelector('.new-collection_header'),
+			newCollectionBlock = document.querySelector('#new_collection'),
+			headerBgBlock = document.querySelector('.header-bg'),
+			headerBlock = document.querySelector("header"),
+			mustHaveBlock = document.querySelector('#must_have'),
+			mustHaveHeader = document.querySelector('.must-have_header'),
+			mustHaveFirstHalfBlock = document.querySelector('.must-have_first-half'),
+			mustHaveSecondHalfBlock = document.querySelector('.must-have_second-half'),
+			mostWantedHeader = document.querySelector('.most-wanted_header'),
+			mostWantedBlock = document.querySelector('#most_wanted'),
+			saleHeader = document.querySelector('.sale_header'),
+			saleBlock = document.querySelector('#sale'),
+			saleBgBlock = document.querySelector('.sale_bg');
+
 		$newsItems.hover(function() {
 			$(this).find(feImage).animate({
 				"x": "14%",
@@ -74,7 +98,7 @@
 				elementHeight = element.clientHeight,
 				containerOffset = container.offsetTop,
 				containerTopPadding = parseInt(getComputedStyle(container).paddingTop),
-				containerBotPadding = parseInt(getComputedStyle(container).paddingTop),
+				containerBotPadding = parseInt(getComputedStyle(container).paddingBottom),
 				containerOutHeight = container.offsetHeight,
 				startPoint = 0,
 				endPoint = 0,
@@ -109,12 +133,12 @@
 		};
 
 	
-		window.onscroll = function() {
+		window.addEventListener('scroll', function() {
 			var scrollPosition = window.pageYOffset || document.documentElement.scrollTop,
 				vieportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-			blockParalax(headerBgBlock, headerBlock, scrollPosition,"bgBlock", 30);
-			blockParalax(newCollectionHeader, newCollectionBlock, scrollPosition, "header");
+			// blockParalax(headerBgBlock, headerBlock, scrollPosition,"bgBlock", 30);
+			// blockParalax(newCollectionHeader, newCollectionBlock, scrollPosition, "header");
 			blockParalax(mustHaveHeader, mustHaveBlock, scrollPosition, "header");
 			blockParalax(mustHaveFirstHalfBlock, mustHaveBlock, scrollPosition,"bgBlock", 7);
 			blockParalax(mustHaveSecondHalfBlock, mustHaveBlock, scrollPosition,"bgBlock", 20);
@@ -127,7 +151,20 @@
 			}else{
 				$body.removeClass(scrollClass);
 			}
-		};
+		});
+
+		window.addEventListener('scroll', function() {
+			var scrollPosition = window.pageYOffset || document.documentElement.scrollTop,
+				vieportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+			// blockParalax(headerBgBlock, headerBlock, scrollPosition,"bgBlock", 30);
+
+			if(scrollPosition >= vieportHeight/2){
+				$body.addClass(scrollClass);
+			}else{
+				$body.removeClass(scrollClass);
+			}
+		});
 
 
 		//menu-show
@@ -143,7 +180,19 @@
 		});
 
 		//fade-preloader
-		$preloader.delay(6000).fadeOut(1500);
+		$(window).on("load", function () {
+			$preloader.delay(1500).fadeOut(1500);
+		});
+
+		var instanse1 = new scrollParallax({
+			element: headerBgBlock
+			, container: headerBlock
+		}); 
+		var instanse2 = new scrollParallax({
+			element: newCollectionHeader
+			, container: newCollectionBlock
+		}); 
+
 	};
 
 
