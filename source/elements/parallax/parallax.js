@@ -26,8 +26,8 @@ function scrollParallax(params) {
 		var scrollPosition = window.pageYOffset || document.documentElement.scrollTop
 			, elementHeight = settings.element.clientHeight
 			, containerOffset = settings.container.offsetTop
-			, containerTopPadding = parseInt(getComputedStyle(settings.container).paddingTop)
-			, containerBotPadding = parseInt(getComputedStyle(settings.container).paddingBottom)
+			, containerTopPadding = Math.round(parseInt(getComputedStyle(settings.container).paddingTop))
+			, containerBotPadding = Math.round(parseInt(getComputedStyle(settings.container).paddingBottom))
 			, containerOutHeight = settings.container.offsetHeight
 			, startPoint = containerOffset
 			, endPoint = containerOffset + containerOutHeight
