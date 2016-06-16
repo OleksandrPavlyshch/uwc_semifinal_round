@@ -25,7 +25,7 @@ var gulp = require('gulp')
 			'vendorJs': './source/js/vendor/'
 			, 'vendorCss': './source/css/vendor/'
 			, 'favicon': './source/favicon/*.ico'
-			, 'js': './source/elements/**/*.js'
+			, 'js': ['./source/elements/**/*.js', './source/js/*.js']
 			, 'fonts': './source/fonts/**/*'
 			, 'fontsFolder': './source/fonts/'
 			, 'jade': './source/pages/*.jade'
@@ -204,7 +204,7 @@ gulp.task('js', function() {
 	return gulp.src(dirs.source.js)
 	.pipe(plumber())
 	// .pipe(sourcemaps.init())
-	.pipe(uglify())
+	// .pipe(uglify())
 	.pipe(concat("index.js"))
 	// .pipe(sourcemaps.write())
 	.pipe(gulp.dest(dirs.build.js))
