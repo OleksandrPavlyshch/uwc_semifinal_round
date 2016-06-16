@@ -35,8 +35,8 @@ function scrollParallax(params) {
 
 		
 		if(scrollPosition >= startPoint && scrollPosition <= endPoint){
-			settings.element.style.transform = "translateY(" + parallaxValue/settings.speed + settings.units +")";
-			settings.element.style["-webkit-transform"] = "translateY(" + parallaxValue/settings.speed + settings.units +")";
+			settings.element.style.transform = "translateY(" + Math.round(parallaxValue/settings.speed) + settings.units +")";
+			settings.element.style["-webkit-transform"] = "translateY(" +Math.round( parallaxValue/settings.speed) + settings.units +")";
 			console.log(settings.element + ' scroll');
 			return;
 		}

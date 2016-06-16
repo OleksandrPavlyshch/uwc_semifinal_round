@@ -187,6 +187,7 @@
 		var instanse1 = new scrollParallax({
 			element: headerBgBlock
 			, container: headerBlock
+			, speed: 2
 		}); 
 		var instanse2 = new scrollParallax({
 			element: newCollectionHeader
