@@ -57,17 +57,6 @@
 			}
 		});
 
-		window.addEventListener('scroll', function() {
-			var scrollPosition = window.pageYOffset || document.documentElement.scrollTop,
-				vieportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-			if(scrollPosition >= vieportHeight/2){
-				$body.addClass(scrollClass);
-			}else{
-				$body.removeClass(scrollClass);
-			}
-		});
-
 
 		//menu-show
 		$menuButton.on('click', function() {
