@@ -13,7 +13,7 @@
 	var saleBgBlockParallax = new scrollParallax({
 		element: saleBgBlock
 		, container: saleBlock
-		, speed: 1.5
+		, speed: 1.2
 	}); 
 
 

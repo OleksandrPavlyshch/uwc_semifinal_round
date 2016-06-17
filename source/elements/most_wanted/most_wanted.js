@@ -7,6 +7,7 @@
 	var mostWantedHeaderParallax = new scrollParallax({
 		element: mostWantedHeader
 		, container: mostWantedBlock
+		, takePaddings: true
 	});
 
 })();
