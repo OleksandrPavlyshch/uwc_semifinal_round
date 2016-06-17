@@ -1,7 +1,6 @@
 'use strict';
 
 function scrollParallax(params) {
-	
 
 	this.extend = function (a, b){
 		for(var key in b)
@@ -17,34 +16,36 @@ function scrollParallax(params) {
 		, units: 'px'
 		, container: null
 		, element: null
+		, takePaddings: false
 	};
 
 	settings = this.extend( defaults, params);
 
 	window.addEventListener('scroll', function() {
-		// console.log(settings);
 		var scrollPosition = window.pageYOffset || document.documentElement.scrollTop
 			, elementHeight = settings.element.clientHeight
 			, containerOffset = settings.container.offsetTop
-			, containerTopPadding = Math.round(parseInt(getComputedStyle(settings.container).paddingTop))
-			, containerBotPadding = Math.round(parseInt(getComputedStyle(settings.container).paddingBottom))
+			, containerTopPadding = settings.takePaddings ? Math.round(parseInt(getComputedStyle(settings.container).paddingTop))-30 : 0
+			, containerBotPadding = settings.takePaddings ? Math.round(parseInt(getComputedStyle(settings.container).paddingBottom)) : 0
 			, containerOutHeight = settings.container.offsetHeight
-			, startPoint = containerOffset
+			, startPoint = containerOffset + containerTopPadding
 			, endPoint = containerOffset + containerOutHeight
-			, parallaxValue = scrollPosition-containerOffset;
+			, parallaxValue = scrollPosition - containerOffset - containerTopPadding;
+
+			// console.log(containerTopPadding);
 
 		
 		if(scrollPosition >= startPoint && scrollPosition <= endPoint){
 			settings.element.style.transform = "translateY(" + Math.round(parallaxValue/settings.speed) + settings.units +")";
 			settings.element.style["-webkit-transform"] = "translateY(" +Math.round( parallaxValue/settings.speed) + settings.units +")";
-			console.log(settings.element + ' scroll');
+			console.log(scrollPosition);
 			return;
 		}
 
 		if(scrollPosition < startPoint){
 			settings.element.style.transform = "translateY(" + 0 + settings.units +")";
 			settings.element.style["-webkit-transform"] = "translateY(" + 0 + settings.units +")";
-			console.log(settings.element + ' scroll end');
+			// console.log(settings.element + ' scroll end');
 			return;
 		}
 
