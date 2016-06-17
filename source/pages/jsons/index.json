@@ -105,6 +105,6 @@
 		"footer": {
 		"follow": "follow us",
 		"hashTag": "philosophy",
-		"socialLinks": ["lkdn", "pinterest-p", "fbk", "twt"]
+		"socialLinks": ["linkedin", "pinterest", "facebook", "twitter"]
 	}
 }
