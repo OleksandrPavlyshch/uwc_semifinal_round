@@ -32,20 +32,17 @@ function scrollParallax(params) {
 			, endPoint = containerOffset + containerOutHeight - elementHeight - containerBotPadding
 			, parallaxValue = scrollPosition - containerOffset - containerTopPadding;
 
-			// console.log(containerTopPadding);
 
 		
 		if(scrollPosition >= startPoint && scrollPosition <= endPoint){
 			settings.element.style.transform = "translateY(" + Math.round(parallaxValue/settings.speed) + settings.units +")";
 			settings.element.style["-webkit-transform"] = "translateY(" +Math.round( parallaxValue/settings.speed) + settings.units +")";
-			console.log(scrollPosition);
 			return;
 		}
 
 		if(scrollPosition < startPoint){
 			settings.element.style.transform = "translateY(" + 0 + settings.units +")";
 			settings.element.style["-webkit-transform"] = "translateY(" + 0 + settings.units +")";
-			// console.log(settings.element + ' scroll end');
 			return;
 		}
 
