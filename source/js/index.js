@@ -57,12 +57,6 @@
 			}
 		});
 
-
-		//menu-show
-		$menuButton.on('click', function() {
-			$body.toggleClass(menuShowClass);
-		});
-
 		$(document).click( function(event){
 			if( $(event.target).closest(menuClass).length )
 				return;

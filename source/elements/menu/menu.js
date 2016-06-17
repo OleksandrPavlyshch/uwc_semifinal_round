@@ -1,7 +1,9 @@
 'use strict';
 (function () {
-	var scrollClass = 'is-scroll',
-	body = document.querySelector('body');
+	var scrollClass = 'is-scroll'
+	, body = document.querySelector('body')
+	, menuButton = document.querySelector('.menu_button')
+	, menuShowClass = 'menu-show';
 
 	window.addEventListener('scroll', function() {
 		var scrollPosition = window.pageYOffset || document.documentElement.scrollTop,
@@ -13,4 +15,10 @@
 			removeClass(body, scrollClass);
 		}
 	});
+	
+	//menu-show
+	menuButton.addEventListener('click', function(){
+		toggleClass(body, menuShowClass);
+	});
+
 })();
