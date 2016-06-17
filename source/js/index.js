@@ -187,11 +187,12 @@
 		var instanse1 = new scrollParallax({
 			element: headerBgBlock
 			, container: headerBlock
-			, speed: 2
+			, speed: 1
 		}); 
 		var instanse2 = new scrollParallax({
 			element: newCollectionHeader
 			, container: newCollectionBlock
+			, takePaddings: true
 		}); 
 
 	};
