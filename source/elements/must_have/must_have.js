@@ -14,13 +14,13 @@
 	var mustHaveFirstHalfBlockParallax = new scrollParallax({
 		element: mustHaveFirstHalfBlock
 		, container: mustHaveBlock
-		, speed: 1.4
+		, speed: 1.1
 	});
 
 	var mustHaveSecondHalfBlockParallax = new scrollParallax({
 		element: mustHaveSecondHalfBlock
 		, container: mustHaveBlock
-		, speed: 3
+		, speed: 1.4
 	});
 
 })();
