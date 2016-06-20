@@ -29,3 +29,28 @@ var toggleClass = function (element, className) {
 		element.className = classes.join(' ');
 	}
 };
+
+var closest = function (el, selector) {
+	var matchesFn;
+
+	['matches','webkitMatchesSelector','mozMatchesSelector','msMatchesSelector','oMatchesSelector'].some(function(fn) {
+		if (typeof document.body[fn] == 'function') {
+			matchesFn = fn;
+			return true;
+		}
+		return false;
+	});
+
+	var parent;
+
+	// traverse parents
+	while (el) {
+		parent = el.parentElement;
+		if (parent && parent[matchesFn](selector) || el.className && new RegExp("(\\s|^)" + selector.replace('.', '') + "(\\s|$)").test(el.className)) {
+			return parent;
+		}
+		el = parent;
+	}
+
+	return null;
+};

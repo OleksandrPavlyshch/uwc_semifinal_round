@@ -4,12 +4,7 @@
 		$htmlBody = $('html, body'),
 		$scrollLinks = $('.scroll-to'),
 		$newsItems = $('.news_item'),
-		feImage = 'feImage',
-
-		$menuButton = $('.menu_button'),
-		menuShowClass = 'menu-show',
-		menuClass = '.menu_nav, .menu_button',
-		scrollClass = 'is-scroll';
+		feImage = 'feImage';
 
 	var onDomReady = function () {
 
@@ -57,12 +52,6 @@
 			}
 		});
 
-		$(document).click( function(event){
-			if( $(event.target).closest(menuClass).length )
-				return;
-			$body.removeClass(menuShowClass);
-			event.stopPropagation();
-		});
 
 
 
