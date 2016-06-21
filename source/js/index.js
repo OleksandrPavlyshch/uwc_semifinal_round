@@ -2,7 +2,7 @@
 (function () {
 	var $body = $('body'),
 		$htmlBody = $('html, body'),
-		$scrollLinks = $('.scroll-to'),
+		// $scrollLinks = $('.scroll-to'),
 		$newsItems = $('.news_item'),
 		feImage = 'feImage';
 
@@ -38,19 +38,6 @@
 		});
 
 
-		//skroll-to
-		$scrollLinks.on('click', function(event) {
-			event.preventDefault();
-
-			var $this = $(this),
-				link = $this.attr("href"),
-				section = $body.find(link);
-
-			if(section.length){
-				$htmlBody.animate({scrollTop: section.offset().top}, 1000);
-				return;
-			}
-		});
 
 
 

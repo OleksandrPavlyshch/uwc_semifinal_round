@@ -54,3 +54,21 @@ var closest = function (el, selector) {
 
 	return null;
 };
+
+var scrollToAnchor = function (anchorId, duration) {
+	if (duration <= 0) return;
+
+	var anchor = document.querySelector(anchorId)
+		, currentLocation = window.pageYOffset
+		, to = anchor.offsetTop;
+	
+
+	var difference = to - currentLocation
+		, perTick = difference / duration * 5;
+	
+	setTimeout(function() {
+		window.scrollTo(0, currentLocation + perTick);
+		if (anchor.scrollTop == to) return;
+		scrollToAnchor(anchorId, duration - 5);
+	}, 5);
+};
