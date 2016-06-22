@@ -142,13 +142,13 @@ gulp.task('sass', function () {
 
 	return gulp.src(dirs.source.sass)
 		.pipe(plumber())
-		// .pipe(sourcemaps.init())
+		.pipe(sourcemaps.init())
 		.pipe(sassGlob())
 		.pipe(sass({
 			outputStyle: 'compact'
 		}).on('error', sass.logError))
 		.pipe(postcss(processors))
-		// .pipe(sourcemaps.write())
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(dirs.build.css))
 		.pipe(connect.reload());
 });
